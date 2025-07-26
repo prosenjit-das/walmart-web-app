@@ -1,0 +1,646 @@
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* Header Styles */
+.header {
+    background-color: #0071ce;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    min-width: 120px;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: 700;
+    color: #ffc220;
+}
+
+.tagline {
+    font-size: 11px;
+    font-weight: 400;
+    color: white;
+    margin-top: -2px;
+}
+
+.search-container {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-input::placeholder {
+    color: #666;
+}
+
+.search-btn {
+    background: #ffc220;
+    border: none;
+    padding: 12px 24px;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+    background: #e6a91a;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cart-count {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.pickup-banner {
+    background-color: #004c91;
+    padding: 8px 0;
+}
+
+.pickup-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pickup-icon {
+    font-size: 16px;
+}
+
+.pickup-text {
+    font-size: 14px;
+    color: white;
+}
+
+/* Main Content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.slider-container {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide.active {
+    opacity: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slide-content {
+    position: absolute;
+    bottom: 40px;
+    left: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.slide-content h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.slide-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.cta-btn {
+    background: #ffc220;
+    color: #333;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.cta-btn:hover {
+    background: #e6a91a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.slider-btn:hover {
+    background: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 20px;
+}
+
+.next-btn {
+    right: 20px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+}
+
+/* Promotional Grid */
+.promo-grid {
+    margin-bottom: 30px;
+}
+
+.promo-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.promo-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.promo-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: white;
+}
+
+.promo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+}
+
+.promo-card.tall {
+    grid-row: span 2;
+}
+
+.promo-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.promo-card.tall img {
+    height: 300px;
+}
+
+.promo-content {
+    padding: 20px;
+}
+
+.promo-content h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.shop-btn {
+    background: #0071ce;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.shop-btn:hover {
+    background: #004c91;
+    transform: translateY(-1px);
+}
+
+/* Walmart+ Section */
+.walmart-plus {
+    margin-bottom: 30px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.plus-container {
+    position: relative;
+    background: linear-gradient(135deg, #0071ce, #004c91);
+    color: white;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.plus-container img {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+}
+
+.plus-content h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.plus-content p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.plus-btn {
+    background: #ffc220;
+    color: #333;
+    border: none;
+    padding: 14px 28px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.plus-btn:hover {
+    background: #e6a91a;
+    transform: translateY(-2px);
+}
+
+/* Feedback Section */
+.feedback-section {
+    margin-bottom: 30px;
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.feedback-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.feedback-btn {
+    background: #0071ce;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 24px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feedback-btn:hover {
+    background: #004c91;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.footer-column h4 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.footer-column ul {
+    list-style: none;
+}
+
+.footer-column li {
+    margin-bottom: 8px;
+}
+
+.footer-column a {
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: #0071ce;
+}
+
+.footer-bottom {
+    border-top: 1px solid #e9ecef;
+    padding: 20px;
+    text-align: center;
+    background: #f1f3f4;
+}
+
+.footer-bottom p {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+    
+    .search-container {
+        order: 3;
+        width: 100%;
+    }
+    
+    .nav-links {
+        order: 2;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    .main-content {
+        padding: 15px;
+    }
+    
+    .promo-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .slider-container {
+        height: 250px;
+    }
+    
+    .slide-content {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .slide-content h2 {
+        font-size: 24px;
+    }
+    
+    .slide-content p {
+        font-size: 16px;
+    }
+    
+    .plus-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px;
+    }
+    
+    .plus-container img {
+        width: 150px;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 30px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .slider-container {
+        height: 200px;
+    }
+    
+    .slide-content h2 {
+        font-size: 20px;
+    }
+    
+    .slide-content p {
+        font-size: 14px;
+    }
+    
+    .promo-content h3 {
+        font-size: 16px;
+    }
+    
+    .plus-content h2 {
+        font-size: 22px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Loading Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.promo-card {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* Accessibility */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Focus styles for accessibility */
+button:focus,
+input:focus,
+a:focus {
+    outline: 2px solid #0071ce;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .promo-card {
+        border: 2px solid #333;
+    }
+    
+    .slide-content {
+        background: rgba(0,0,0,0.8);
+        padding: 20px;
+        border-radius: 8px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .slide {
+        transition: none;
+    }
+    
+    .promo-card:hover {
+        transform: none;
+    }
+    
+    button:hover {
+        transform: none;
+    }
+}
